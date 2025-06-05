@@ -1,0 +1,14 @@
+Problem 
+    - Type Validataion
+    - Data Validataion
+
+Pydantic
+1. 
+    - class that prepresents the ideal schema of the data.
+        - their types, and any validataion constraints. 
+2.  
+    -  Pydantic will autometically validate the data and coerce in into the corrent python types.
+3. 
+    - pass the validate model object to fucntion.  
+        - This ensures that every part of your program works with clen, type-safe, and logically valid data.
+        
