@@ -1,15 +1,19 @@
-from pydantic import BaseModel, EmailStr, AnyUrl
-from typing import List, Dict, Optional
+from pydantic import BaseModel, EmailStr, AnyUrl, Field
+from typing import List, Dict, Optional, Annotated
 
-
+# Field is data validation
 class Patient(BaseModel):
-    name : str
-    age : int
+
+
+    name : Annotated[str, Field(max_length=50, title = "name of the patient", 
+                                               description="less than 50 chars",
+                                               examples=['Sandeep', 'Amit'])]
+    age : int = Field(gt=0, lt=90)
     email : EmailStr
     linked_url: AnyUrl
-    weight : float = False
-    married: Optional[bool] = None
-    allergiers: Optional[list[str]]  = None
+    weight : Annotated[float,Field(gt=0, strict=True)]
+    married: Annotated[bool, Field(default=None, description="Is the marrid or not")]
+    allergiers: Annotated[Optional[list[str]], Field(default=None, max_length=5)]
     contact_details: Optional[Dict[str, str]] = None
 
 
@@ -39,3 +43,4 @@ inset_patient_data(patient1)
 
 
 
+# 49.86
