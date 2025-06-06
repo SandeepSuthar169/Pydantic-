@@ -12,3 +12,16 @@ Pydantic
     - pass the validate model object to fucntion.  
         - This ensures that every part of your program works with clen, type-safe, and logically valid data.
         
+_________________________________________________________________________________________________________________________
+
+1. BaseModel:->  The base class for creating data models. You subclass this to define your own model.
+2. EmailStr:->   A special type for validating email strings.
+3. AnyUrl:->     A special type for validating URLs.
+4. Field:->      Used to add extra metadata and validation to model fields (e.g., default values, constraints).
+
+5. List[X]:->        A list of items of type X.
+6. Dict[K, V]:->     A dictionary with keys of type K and values of type V.
+7. Optional[X]:->    Means the value can be X or None.
+8. Annotated:->      Allows you to add metadata to type hints (often used with validators, e.g., in FastAPI and Pydantic v2).
+
+9. @field_validator :-> is a decorator used to define custom validation logic for specific fields in a model.
