@@ -25,3 +25,14 @@ ________________________________________________________________________________
 8. Annotated:->      Allows you to add metadata to type hints (often used with validators, e.g., in FastAPI and Pydantic v2).
 
 9. @field_validator :-> is a decorator used to define custom validation logic for specific fields in a model.
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+Nested_models
+
+
+1. Better organization of related data (e.g., vitals, address, insurance)
+2. Reusability: Use Vitals in multiple models (e.g., Patient, MedicalRecord)
+3. Readability: Easier for developers and API consumers to understand
+4. Validation: Nested models are validated automatically—no extra work needed
